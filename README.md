@@ -1,4 +1,4 @@
-# ZIQSI-Rank
+# ZIQ-SIR
 We provide a tool for doing hypothesis testing for zero-inflated microbiome data given covariates of interest.
 ## Description
 This R document provides a novel zero-inflated semiparametric single-index quantile regression algorithm to conduct hypothesis testing for the relationship between zero-inflated responses and covariates of interest.
