@@ -249,6 +249,7 @@ fKMQR.test = function(Y, X, tau, m, test_num, score = NULL, K = NULL) {
 }
 
 # Combining the p-values for logistic regression and single-index quantile regression
+# choose method according to the sample size: large sample size using "Chi", small sample size using "Pearson"
 Combination = function(y, X, taus = c(0.1,0.25,0.5,0.75,0.9), m, test_num,method = "Chi"){
   # getting the p-value for logistic regression
   b = 1*(y>0)
