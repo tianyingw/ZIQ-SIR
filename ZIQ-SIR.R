@@ -36,6 +36,8 @@ BIC = function(Z1,Y1,tau1,Nn,m){
 test_stats = function(Y,X,taus,m,test_num){
   y = Y[which(Y>0)]
   x = X[which(Y>0),-test_num]
+  X[,test_num] = as.matrix(X[,test_num]) - x%*% solve(t(x)%*% x)%*%t(x)%*%as.matrix(X[,test_num])
+
   
   n = length(y)
   l = ncol(x)
