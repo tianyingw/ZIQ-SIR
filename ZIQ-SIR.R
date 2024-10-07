@@ -36,7 +36,7 @@ BIC = function(Z1,Y1,tau1,Nn,m){
 test_stats = function(Y,X,taus,m,test_num){
   y = Y[which(Y>0)]
   x = X[which(Y>0),-test_num]
-  X[,test_num] = X[,test_num] - x%*% solve(t(x)%*% x)%*%t(x)%*%X[,test_num]
+  X[,test_num] = X[,test_num] - X[,-test_num]%*% solve(t( X[,-test_num])%*%  X[,-test_num])%*%t( X[,-test_num])%*%X[,test_num]
 
   
   n = length(y)
