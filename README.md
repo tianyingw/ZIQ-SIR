@@ -29,7 +29,7 @@ The `fKMQR.test` function uses Pearson Type III distribution to get the p-value 
 
 ## Examples and Usage
 ```{r}
-library(ZIQ-SIR)
+library(ZIQSIR)
  #### demo 1:
  # small sample size
  # using Pearson Type III method
