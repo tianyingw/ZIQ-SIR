@@ -33,7 +33,7 @@ library(ZIQ-SIR)
  #### demo 1:
  # small sample size
  # using Pearson Type III method
- # alternative distribution
+ # alternative distribution, testing for the 3rd covariate `waist`
  # sample size
  set.seed(10001)
  n = 500
@@ -48,8 +48,8 @@ library(ZIQ-SIR)
  bet3 = function(x){
    (x^2-0.5*x+0.6)*2/3
  }
- bet5 = function(x){-(0.3*x^2-x)*2}
  bet4 = function(x){-sin(x*2*pi)*0.1}
+ bet5 = function(x){-(0.3*x^2-x)*2}
  bet0 = function(x){-147.7*x-50*x^2-20}
  bet = function(x,u){x^4*u*10^(-5)/6+x^2*u*0.2/3}
 
@@ -77,7 +77,7 @@ library(ZIQ-SIR)
  ### demo 2
  # simulation results under large sample size
  # using Chi-square method
- # under null hypothesis
+ # under null hypothesis, testing for the combination of 2nd and 3rd covariates: `bmi` and `waist`
  # sample size
  n = 2000
 
