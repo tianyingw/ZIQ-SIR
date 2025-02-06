@@ -1,0 +1,19 @@
+Package: ZIQSIR
+Type: Package
+Title: ZIQ-SIR package
+Version: 0.1.0
+Author: Zirui Wang, Wodan Ling and Tianying Wang
+Maintainer: Zirui Wang <wzr23@mails.tsinghua.edu.cn>
+Description: We provide a method to test the relationship between the covariate(s) of interest and zero-inflated data.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.5.0),
+Imports:
+    MASS,
+    lme4,
+    splines2,
+    PearsonDS,
+    quantreg
+RoxygenNote: 7.3.2
