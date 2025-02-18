@@ -13,7 +13,7 @@ To install the **ZIQSI** package from GitHub, you can use the following code:
 ```{r}
 # If devtools is not already installed, install it first
 # install.packages("devtools")
-# Install the ZIQSI package from GitHub
+# Install the ZIQ-SIR package from GitHub
 devtools::install_github("https://github.com/tianyingw/ZIQ-SIR")
 ```
 
