@@ -2,7 +2,7 @@
 ## Introduction
 The **ZIQ-SIR** R package is designed to provide advanced statistical tools for association testing for zero-inflated data. This package includes one main function:
 
-- `Combination`: A function for testing association for zero-inflated data and covariates of interest.
+- `ZIQSIR`: A function for testing association for zero-inflated data and covariates of interest.
 
 This document provides an overview of the package, how to install it, and examples of how to use these functions.
 
@@ -18,14 +18,8 @@ devtools::install_github("https://github.com/tianyingw/ZIQ-SIR")
 ```
 
 ## Functions in ZIQ-SIR Package
-### Combination
-The `Combination` function uses provides a novel zero-inflated semiparametric single-index quantile regression algorithm to obtain the p-value for testing associations for zero-inflated response. This function provides two options for hypothesis testing: `Chi` for large sample cases; `Pearson` for small sample cases.
-
-### test_stats, test_stat_separate
-The `test_stats` and `test_stat_separate` functions provides two different methods for computing test statistics, corresponding to the two options for hypothesis testing: `Chi` and `Pearson`.
-
-### fKMQR.test
-The `fKMQR.test` function uses Pearson Type III distribution to get the p-value for single-index quantile regression model.
+### ZIQSIR
+The `ZIQSIR` function uses provides a novel zero-inflated semiparametric single-index quantile regression algorithm to obtain the p-value for testing associations for zero-inflated response. This function provides two options for hypothesis testing: `Chi` for large sample cases; `Pearson` for small sample cases.
 
 ## Examples and Usage
 ```{r}
@@ -72,7 +66,7 @@ library(ZIQ-SIR)
  w = bet(bet1(u)*x1+bet2(u)*x2+bet3(u)*x3+bet4(u)*x4+bet5(u)*x5+bet0(u),u)
  y = b*w
 
- Combination(y,X,m = 4,test_num = 4,method = "Pearson")
+ Combination(y,X,m = 3,test_num = 4,method = "Pearson")
 
  ### demo 2
  # simulation results under large sample size
@@ -120,7 +114,7 @@ library(ZIQ-SIR)
  y = b*w
  X = cbind(1,x1,x2,x3,x4,x5,x6)
 
- Combination(y,X,m = 3,test_num = c(3,4),method = "Chi")
+ Combination(y,X,m = 3,test_num = c(2,3),method = "Chi")
 
 ```
 
