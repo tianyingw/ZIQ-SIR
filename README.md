@@ -72,7 +72,7 @@ u = runif(n)
 b = rbinom(n,1,p(x1,x2,x3,x4,x5))
 w = bet(bet1(u)*x1+bet2(u)*x2+bet3(u)*x3+bet4(u)*x4+bet5(u)*x5+bet0(u),u)
 y = b*w
-ZIQSIR(y,X,m = 4,test_num = 3,method = "Pearson")
+ZIQSIR(y,X,m = 4,test_num = 4,method = "Pearson")
 
 ### demo 2
 # simulation results under large sample size
