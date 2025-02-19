@@ -8,7 +8,7 @@ This document provides an overview of the package, how to install it, and exampl
 
 ## Usage
 ## Installation
-To install the **ZIQSI** package from GitHub, you can use the following code:
+To install the **ZIQ-SIR** package from GitHub, you can use the following code:
 
 ```{r}
 # If devtools is not already installed, install it first
