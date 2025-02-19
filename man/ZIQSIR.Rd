@@ -2,7 +2,7 @@
 % Please edit documentation in R/ZIQSIR.R
 \name{ZIQSIR}
 \alias{ZIQSIR}
-\title{Combine the marginal p-values}
+\title{Provides a novel zero-inflated semiparametric single-index quantile regression algorithm to obtain the p-value for testing associations for zero-inflated response. This function provides two options for hypothesis testing: `Chi` for large sample cases; `Pearson` for small sample cases.}
 \usage{
 ZIQSIR(
   y,
@@ -27,10 +27,10 @@ ZIQSIR(
 \item{method}{different method for calculating p-value: 'Chi' for large sample cases; 'Pearson' for small sample cases}
 }
 \value{
-quantiles of a m*k matrix, each row is the estimated quantiles for each new case
+a p-value for testing the association between the covariate(s) of interest and the zero-inflated response.
 }
 \description{
-Combine the marginal p-values
+Provides a novel zero-inflated semiparametric single-index quantile regression algorithm to obtain the p-value for testing associations for zero-inflated response. This function provides two options for hypothesis testing: `Chi` for large sample cases; `Pearson` for small sample cases.
 }
 \details{
 \itemize{
@@ -88,7 +88,7 @@ b = rbinom(n,1,p(x1,x2,x3,x4,x5))
 w = bet(bet1(u)*x1+bet2(u)*x2+bet3(u)*x3+bet4(u)*x4+bet5(u)*x5+bet0(u),u)
 y = b*w
 
-ZIQSIR(y,X,m = 4,test_num = 4,method = "Pearson")
+ZIQSIR(y,X,m = 3,test_num = 4,method = "Pearson")
 
 ### demo 2
 # simulation results under large sample size
