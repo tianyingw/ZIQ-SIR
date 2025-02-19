@@ -27,3 +27,4 @@ p-value for method 'Pearson'
 \description{
 P-value computation for method 'Pearson'
 }
+\keyword{internal}

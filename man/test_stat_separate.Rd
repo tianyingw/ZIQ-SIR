@@ -23,3 +23,4 @@ test statistics for method 'Pearson'
 \description{
 Test statistic computation for hypothesis testing
 }
+\keyword{internal}
