@@ -9,8 +9,7 @@
 #' @param score 'null' as default
 #'
 #' @return p-value for method 'Pearson'
-#' @export
-
+#' @keywords internal
 # using Pearson Type III distribution to get the p-value for hypothesis testing for single-index quantile regression
 fKMQR.test = function(Y, X, tau, m, test_num, score = NULL, K = NULL) {
   ## fast Kernel machine quantile regression

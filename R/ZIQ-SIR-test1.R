@@ -7,8 +7,7 @@
 #' @param test_num a vector, representing the test corresponds to which covariate(s) in X.
 #'
 #' @return test statistics for method 'Pearson'
-#' @export
-
+#' @keywords internal
 # constructing the score for hypothesis testing and approximated variance-covariance for the score
 test_stat_separate = function(Y,X,taus,m,test_num){
   rho = function(x,tau){tau*x - x*(x<0)} # score function

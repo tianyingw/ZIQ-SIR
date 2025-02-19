@@ -7,8 +7,7 @@
 #' @param test_num a vector, representing the test corresponds to which covariate(s) in X.
 #'
 #' @return test statistics for method 'Chi'
-#' @export
-
+#' @keywords internal
 test_stats = function(Y,X,taus,m,test_num){
   rho = function(x,tau){tau*x - x*(x<0)} # score function
 
