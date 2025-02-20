@@ -19,7 +19,7 @@ devtools::install_github("https://github.com/tianyingw/ZIQ-SIR")
 
 ## Functions in ZIQ-SIR Package
 ### ZIQSIR
-The `ZIQSIR` function provides a novel zero-inflated semiparametric single-index quantile regression algorithm to obtain the p-value for testing associations for zero-inflated response. This function provides two options for hypothesis testing: `large` for large sample cases; `small` for small sample cases.
+The `ZIQSIR` function provides a novel zero-inflated semiparametric single-index quantile regression algorithm to obtain the p-value for testing associations for zero-inflated response. By inputting the response variable, explanatory variables, the indices of the variables to be tested, and the method to be used, we can test the relationship between the variables of interest and the zero-inflated response variable. This function provides two options for hypothesis testing: `large` for large sample cases; `small` for small sample cases.
 
 ## Examples and Usage
 ```{r}
@@ -66,7 +66,7 @@ library(ZIQ-SIR)
  w = bet(bet1(u)*x1+bet2(u)*x2+bet3(u)*x3+bet4(u)*x4+bet5(u)*x5+bet0(u),u)
  y = b*w
 
- Combination(y,X,m = 3,test_num = 4,method = "Pearson")
+ ZIQSIR(y,X,m = 3,test_num = 4,method = "small")
 
  ### demo 2
  # simulation results under large sample size
@@ -114,7 +114,7 @@ library(ZIQ-SIR)
  y = b*w
  X = cbind(1,x1,x2,x3,x4,x5,x6)
 
- Combination(y,X,m = 3,test_num = c(2,3),method = "Chi")
+ ZIQSIR(y,X,m = 3,test_num = c(2,3),method = "large")
 
 ```
 
