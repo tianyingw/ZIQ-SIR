@@ -2,7 +2,7 @@
 % Please edit documentation in R/ZIQSIR.R
 \name{ZIQSIR}
 \alias{ZIQSIR}
-\title{Provides a novel zero-inflated semiparametric single-index quantile regression algorithm to obtain the p-value for testing associations for zero-inflated response. This function provides two options for hypothesis testing: `Chi` for large sample cases; `Pearson` for small sample cases.}
+\title{Provides a novel tool to obtain the p-value for testing associations for zero-inflated response.}
 \usage{
 ZIQSIR(
   y,
@@ -14,27 +14,27 @@ ZIQSIR(
 )
 }
 \arguments{
-\item{y}{n*1 vector, the observed outcome for n samples}
+\item{y}{n*1 vector, the observed outcome for n samples.}
 
-\item{X}{n*p matrix, the observed p covariates for n samples}
+\item{X}{n*p matrix, the observed p covariates for n samples.}
 
-\item{taus}{k*1 vector, a grid of quantile levels; e.g., 0.5 for the median, 0.75 for the 3rd quartile; default is c(0.1, 0.25, 0.5, 0.75, 0.9)}
+\item{taus}{k*1 vector, a grid of quantile levels; e.g., 0.5 for the median, 0.75 for the 3rd quartile; default is c(0.1, 0.25, 0.5, 0.75, 0.9).}
 
-\item{m}{numeric variable, the order of B-spline function; default is 3}
+\item{m}{numeric variable, the order of B-spline function; default is 3.}
 
 \item{test_num}{a vector, representing the test corresponds to which covariate(s) in X.}
 
-\item{method}{different method for calculating p-value: 'Chi' for large sample cases; 'Pearson' for small sample cases}
+\item{method}{different method for calculating p-value: 'large' for large sample cases, where we use the asymptotic distribution for hypothesis testing; 'small' for small sample cases, where we use the Pearson Type III distribution to approximate the null distribution.}
 }
 \value{
-a p-value for testing the association between the covariate(s) of interest and the zero-inflated response.
+A p-value for testing the association between the covariate(s) of interest and the zero-inflated response.
 }
 \description{
-Provides a novel zero-inflated semiparametric single-index quantile regression algorithm to obtain the p-value for testing associations for zero-inflated response. This function provides two options for hypothesis testing: `Chi` for large sample cases; `Pearson` for small sample cases.
+Provides a novel tool to obtain the p-value for testing associations for zero-inflated response.
 }
 \details{
 \itemize{
-  \item Please choose 'Chi' or 'Pearson' for \code{method}, no other options.
+  \item Please choose 'large' or 'small' for \code{method}, no other options.
   \item \code{taus} must be a subset or equal to the grid used to produce \code{input}.
 }
 }
@@ -88,7 +88,7 @@ b = rbinom(n,1,p(x1,x2,x3,x4,x5))
 w = bet(bet1(u)*x1+bet2(u)*x2+bet3(u)*x3+bet4(u)*x4+bet5(u)*x5+bet0(u),u)
 y = b*w
 
-ZIQSIR(y,X,m = 3,test_num = 4,method = "Pearson")
+ZIQSIR(y,X,m = 3,test_num = 4,method = "small")
 
 ### demo 2
 # simulation results under large sample size
@@ -136,5 +136,5 @@ w = bet(bet1(u)*x1+bet2(u)*x2+bet3(u)*x3+bet4(u)*x4+bet5(u)*x5+bet6(u)*x6+bet0(u
 y = b*w
 X = cbind(x1,x2,x3,x4,x5,x6)
 
-ZIQSIR(y,X,m = 3,test_num = c(2,3),method = "Chi")
+ZIQSIR(y,X,m = 3,test_num = c(2,3),method = "large")
 }
